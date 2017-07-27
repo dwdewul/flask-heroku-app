@@ -24,11 +24,6 @@ api.add_resource(UserRegister, '/register')
 api.add_resource(Store, '/store/<string:name>')
 api.add_resource(StoreList, '/stores')
 
-# neat trick to auto create a DB and tables before a request is pushed through
-@app.before_first_request
-def create_tables():
-    db.create_all()
-
 
 if __name__ == '__main__':
     from db import db
